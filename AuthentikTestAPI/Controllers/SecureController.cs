@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
@@ -17,7 +18,7 @@ namespace AuthentikTestAPI.Controllers
         }
 
         // Endpoint restricted to users in the "admin" role
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin-group")]
         [HttpGet("admin")]
         public IActionResult GetAdmin()
         {
